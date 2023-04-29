@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -17,6 +17,7 @@ export function SiteHeader() {
               href={siteConfig.links.github}
               target="_blank"
               rel="noreferrer"
+              className="hidden md:flex"
             >
               <div
                 className={buttonVariants({
@@ -32,6 +33,7 @@ export function SiteHeader() {
               href={siteConfig.links.twitter}
               target="_blank"
               rel="noreferrer"
+              className="hidden md:flex"
             >
               <div
                 className={buttonVariants({
@@ -43,7 +45,22 @@ export function SiteHeader() {
                 <span className="sr-only">Twitter</span>
               </div>
             </Link>
-            <ThemeToggle />
+            <span className="hidden md:flex">
+              <ThemeToggle />
+            </span>
+            <Link href={siteConfig.links.register}>
+              <Button size="sm" variant="outline">
+                Registeren
+              </Button>
+            </Link>
+            <Link href={siteConfig.links.login}>
+              <Button size="sm" variant="default">
+                Inloggen
+              </Button>
+            </Link>
+            <span className="flex md:hidden">
+              <ThemeToggle />
+            </span>
           </nav>
         </div>
       </div>
