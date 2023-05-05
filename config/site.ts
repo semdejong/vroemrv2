@@ -10,7 +10,7 @@ export const siteConfig = {
     },
     {
       title: "Prijzen",
-      href: "/prijzen",
+      href: "/prices",
     },
     {
       title: "Contact",

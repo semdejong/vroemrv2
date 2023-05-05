@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { useSearchParams } from "next/navigation"
+import { useRouter } from "next/router"
 // import { zodResolver } from "@hookform/resolvers/zod"
 import { signIn } from "next-auth/react"
 import { useForm } from "react-hook-form"
@@ -30,6 +31,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const searchParams = useSearchParams()
 
   async function onSubmit(data: FormData) {
+    window.location.href = "/dashboard"
+    return
     setIsLoading(true)
 
     const signInResult = await signIn("email", {
@@ -91,7 +94,11 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               </p>
             )}
           </div>
-          <button className={cn(buttonVariants())} disabled={isLoading}>
+          <button
+            className={cn(buttonVariants())}
+            disabled={isLoading}
+            onClick={() => (window.location.href = "/dashboard")}
+          >
             {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}

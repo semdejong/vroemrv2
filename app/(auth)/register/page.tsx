@@ -3,6 +3,7 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
+import Logo from "@/components/logo"
 import { UserAuthForm } from "@/components/user-auth-form"
 
 export const metadata = {
@@ -37,7 +38,7 @@ export default function RegisterPage() {
       <div className="hidden h-full bg-muted lg:block">
         <div className="flex flex-col justify-center h-full">
           <div className="flex flex-col items-center justify-center space-y-6">
-            <Icons.logo className="h-12 w-12" />
+            <Logo />
             <h1 className="text-2xl font-semibold tracking-tight">
               Welkom bij Vroemr
             </h1>

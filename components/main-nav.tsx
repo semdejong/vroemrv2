@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 
+import Logo from "./logo"
 import { MobileNav } from "./mobile-nav"
 
 interface MainNavProps {
@@ -19,7 +20,7 @@ export function MainNav({ items }: MainNavProps) {
   return (
     <div className="flex md:gap-2">
       <Link href="/" className="hidden items-center space-x-2 md:flex">
-        <Icons.logo className="h-6 w-6" />
+        <Logo />
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>
@@ -48,7 +49,7 @@ export function MainNav({ items }: MainNavProps) {
         className="flex items-center space-x-2 md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
-        {showMobileMenu ? <Icons.close /> : <Icons.logo />}
+        {showMobileMenu ? <Icons.close /> : <Logo />}
         <span className="font-bold">Menu</span>
       </button>
       {showMobileMenu && items && <MobileNav items={items}></MobileNav>}
